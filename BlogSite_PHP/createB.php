@@ -41,7 +41,10 @@ if(isset($_POST['create'])){
             <div>
                 <label for="author" class="form-label">Author:</label>
                 <br>
-                <input type="text" name="author" class="form-input" value="<?php echo $login_session;?>" required>
+                <select class="form-input" name="author" required>
+                    <option value="<?php echo $login_session;?>"><?php echo $login_session;?></option>
+                    <option value="Anonymous">Anonymous</option>
+                </select>
             </div>
             <div>
                 <label for="topic" class="form-label">Topic:</label>
