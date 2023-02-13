@@ -1,0 +1,26 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "blogsbd";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+$sql = "CREATE TABLE users (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+fname VARCHAR(30) NOT NULL,
+lname VARCHAR(30) NOT NULL,
+email  VARCHAR(30) NOT NULL,
+pass VARCHAR(50),
+)";
+$sql = "CREATE TABLE blogs (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(30) NOT NULL,
+author  VARCHAR(30) NOT NULL,
+topic  VARCHAR(30) NOT NULL,
+info  VARCHAR(30) NOT NULL,
+date VARCHAR(50),
+)";
+$conn->close();
+?>
